@@ -1,0 +1,7 @@
+- ['管理员登录成功','松勤老师','123456',['css selector','.no-redirect'],'首页']
+- ['用户登录成功','朝天宫001','123456',['css selector','.no-redirect'],'首页']
+- ['登录密码错误','松勤老师','12345',['css selector','.el-message__content'],'密码不正确！']
+- ['登录密码太短','松勤老师','12',['css selector','.el-form-item__error'],'密码不能小于3位']
+- ['登录用户名错误','松勤幼师','12345',['css selector','.el-message__content'],'用户名或密码错误']
+- ['登录密码为空','松勤老师','',['css selector','.el-form-item__error'],'密码不能小于3位']
+- ['登录用户名为空','','12345',['css selector','.el-message__content'],'用户名或密码错误']
