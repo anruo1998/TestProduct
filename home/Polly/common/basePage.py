@@ -61,10 +61,6 @@ class BasePage:
 
 
 if __name__ == '__main__':
-    # test_locator = BasePage()
-    # print(test_locator.locators)
-
     from pageObjects.login_Objs import loginPage
-
     test_loginpage = loginPage.LoginPage()
     print(test_loginpage.locators)
