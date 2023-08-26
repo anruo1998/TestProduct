@@ -71,7 +71,6 @@ AddProductPage:
     ["css selector","label[for='brandId']+div div"]
   product_brand_null_text:  # 报错提示
     [ "css selector","label[for='brandId']+div .el-form-item__error"]
-
   sales_button:  # 下一步，填写商品促销
     ["xpath","//span[text()='下一步，填写商品促销']"]
   attr_button: # 下一步，填写商品属性
