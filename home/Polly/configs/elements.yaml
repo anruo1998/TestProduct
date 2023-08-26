@@ -9,21 +9,10 @@ LoginPage:
 MainPage:
   # 菜单栏页面MainPase
   # 一级菜单
-  menu_home: ["xpath","//span[text()='首页统计']"]
+  #  menu_product_fold: ['css selector','.menu-wrapper>:nth-child({}})']
   menu_product: ["xpath","//span[text()='商品管理']"]
-  menu_product_fold: ['css selector','.menu-wrapper>:nth-child(2)']
-  menu_orders: ["xpath","//span[text()='订单管理']"]
-  menu_member: ["xpath","//span[text()='会员管理']"]
-  menu_operation: ["xpath","//span[text()='运营管理']"]
-  menu_marketing: ["xpath","//span[text()='营销管理']"]
   menu_system: ["xpath","//span[text()='系统管理']"]
-  menu_shop: ["xpath","//span[text()='商城配置']"]
   menu_store: ["xpath","//span[text()='店铺管理']"]
-  menu_property: ["xpath","//span[text()='物业管理']"]
-  menu_integral: ["xpath","//span[text()='积分管理']"]
-  menu_distribution: ["xpath","//span[text()='分销管理']"]
-  menu_content: ["xpath","//span[text()='系统管理']"]
-  menu_testing: ["xpath","//span[text()='工具测试']"]
 
   # 商品二级菜单
   product_list: ["xpath","//span[text()='商品列表']"]
@@ -33,7 +22,10 @@ MainPage:
   brand_manager: ["xpath","//span[text()='品牌管理']"]
   product_size: ["xpath","//span[text()='商品规格']"]
   present_list: ["xpath","//span[text()='赠品列表']"]
-  product_comment: ["xpath","//span[text()='商品评论']"]
+
+  # 店铺二级菜单
+  merchant_manage: ["xpath","//span[text()='商家管理']"]
+  merchant_type: ["xpath","//span[text()='商户分类']"]
 
   # 导览框NavbarPase:
   Menu_button: [ "css selector",".hamburger-container svg" ]
@@ -44,7 +36,6 @@ MainPage:
   home_button: [ "css selector","ul a[href='#/index1']" ]
   quit_button: [ "xpath","//span[text()='退出']" ]
 
-# 添加商品页面
 AddProductPage:
   # 下拉框
   select_lev1: # 一级机构数
@@ -88,20 +79,16 @@ AddProductPage:
   alert_title: [ "xpath","//button/span[contains(text(),'提示')]" ]
 
 ProductListPage: #商品列表
-  logout_button: ['xpath',"//span[text()='退出']"] #退出按钮
-  personal_button: ['xpath','//img']  #个人中心按钮
-  home_button: [ 'xpath','//*[text()="首页"]' ] #首页按钮
-  first_product: ['css selector','tbody > tr:nth-child(1) > td:nth-child(4) p:nth-child(1)'] #商品列表界面的第一个商品名称
-  all_products: ['css selector','tbody  td:nth-child(4) p:nth-child(1)'] #当前页所有商品的名字
-  all_product_brands: ['css selector','tbody  td:nth-child(4) p:nth-child(2)'] #当前页所有品牌的名字
-  product_name_search_input: ['css selector',"form > div:nth-child(1) .el-input__inner"] #输入搜索-商品名称
-  product_brand_search_select: ['css selector','form >div:nth-child(3) .el-input__inner'] #搜索-商品品牌
-  product_brand_search_select_idx1: ['css selector','body > .el-select-dropdown ul > li:nth-child(1)'] #搜索-商品品牌-第一个品牌
-  shelves_status_select: ['css selector','form >div:nth-child(5) .el-input__inner'] #上架状态
-  shelves_status_select_idx: ['css selector','body > .el-select-dropdown ul > :nth-child(%s)'] #上架状态中的第几个，注意跟前面的第几个品牌冲突的
-  search_button: ['css selector','.el-button.el-button--primary.el-button--small'] #查询结果或底部的确定，第一个是查询结果
-  search_reset: ['css selector',' button.el-button.el-button--default.el-button--small'] #重置按钮
-  checkbox_product: ['css selector','.el-table__header-wrapper+div .el-checkbox__inner'] #商品的勾选框
-  delete_button: ['xpath',"//span[contains(text(),'删除')]"] #商品的删除按钮
-  confirm_button: ['xpath',"//div[@class='el-message-box__btns']/button[2]"] #删除后的确认
+  product_name_search: ["xpath","//label[text()='输入搜索：']/following-sibling::div"]
+  product_kind_search: ["xpath","//label[text()='商品分类：']/following-sibling::div"]
+  product_brand_search: ["xpath","//label[text()='商品品牌：']/following-sibling::div"]
+  item number_search: ["xpath","//label[text()='商品货号：']/following-sibling::div"]
+  listing_status_search: ["xpath","//label[text()='上架状态：']/following-sibling::div"]
+  audit_status_search: ["xpath","//label[text()='审核状态：']/following-sibling::div"]
 
+  first_product_name: ['css selector','tbody > tr:nth-child(1) > td:nth-child(4) p:nth-child(1)'] #商品列表界面的第一个商品名称
+  product_names: ['css selector','tbody td:nth-child(4) p:nth-child(1)'] # 当前页所有商品的名字
+  first_product_brand: ['css selector','tbody > tr:nth-child(1) > td:nth-child(4) p:nth-child(2)'] # 商品列表界面的第一个商品的商品品牌
+  product_brands: ['css selector','tbody td:nth-child(4) p:nth-child(2)'] # 当前页所有品牌的名字
+  first_product: [ 'css selector','tbody > tr:nth-child(1) > td:nth-child(5) p:nth-child(2)' ] #商品列表界面的第一个商品名称
+  all_products: [ 'css selector','tbody td:nth-child(5) p:nth-child(2)' ] # 当前页所有商品的名字
