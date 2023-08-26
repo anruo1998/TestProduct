@@ -1,7 +1,4 @@
-import time
-
 from common.basePage import BasePage
-from pageObjects.login_Objs import loginPage
 from pageObjects.product_Objs import addProductPage, productListPage
 
 
@@ -32,6 +29,7 @@ class MainPage(BasePage):
             return productListPage.ProductListPage()
 
 if __name__ == '__main__':
+    from pageObjects.login_Objs import loginPage
     test_loginpage = loginPage.LoginPage().open_polly_loginpage().login_polly('松勤老师', '123456')
     test_mainpage = MainPage()
     test_mainpage.goto_addproductpage()
